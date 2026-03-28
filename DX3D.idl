@@ -1,0 +1,9 @@
+namespace WinUINotes
+{
+    [default_interface]
+    runtimeclass DX3D : Microsoft.UI.Xaml.Controls.Page
+    {
+        DX3D();
+        Int32 MyProperty;
+    }
+}
