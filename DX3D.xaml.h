@@ -14,6 +14,8 @@ namespace winrt::WinUINotes::implementation
     {
         DX3D();
         void InitializeDirectX();
+        void InitializeShaders();
+        void InitializeGeometry();
         void SetupRenderTarget();
         void Render();
         int32_t MyProperty();
@@ -24,7 +26,12 @@ namespace winrt::WinUINotes::implementation
         winrt::com_ptr<ID3D11DeviceContext>    m_d3dContext;
         winrt::com_ptr<IDXGISwapChain1>        m_swapChain;
         winrt::com_ptr<ID3D11RenderTargetView> m_renderTargetView;
+        winrt::com_ptr<ID3D11VertexShader>     m_vertexShader;
+        winrt::com_ptr<ID3D11PixelShader>      m_pixelShader;
+        winrt::com_ptr<ID3D11InputLayout>      m_inputLayout;
+        winrt::com_ptr<ID3D11Buffer>           m_vertexBuffer;
         winrt::event_token                     m_loadedToken;
+        UINT                                   m_vertexCount = 0;
     };
 }
 
